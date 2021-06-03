@@ -8,9 +8,11 @@
 import SwiftUI
 import Lottie
 struct CatView: UIViewRepresentable {
+    typealias UIViewType = UIView
+
     var name: String
-    var loading : Bool
     var loopMode: LottieLoopMode = .loop
+    let isPaused: Bool
     
     
     var animationView = AnimationView()
@@ -34,11 +36,34 @@ struct CatView: UIViewRepresentable {
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<CatView>) {}
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<CatView>) {
+        if isPaused {
+            context.coordinator.parent.animationView.pause()
+            
+        }
+        else {
+            context.coordinator.parent.animationView.play()
+            
+        }
+    }
+
+
+func makeCoordinator() -> Coordinator {
+    Coordinator(self)
 }
+
+class Coordinator: NSObject {
+    var parent: CatView
+    
+    init(_ parent: CatView) {
+        self.parent = parent
+    }
+}
+
 
 struct Cat1View_Previews: PreviewProvider {
     static var previews: some View {
-        CatView(name: "cat", loading: true)
+        CatView(name: "cat", isPaused: false)
     }
+}
 }

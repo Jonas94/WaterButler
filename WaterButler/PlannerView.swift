@@ -54,9 +54,6 @@ struct PlannerView: View {
                 
                 Button(action: {
                     print("Button action")
-                    //apiCall().getUserComments { (comments) in
-                    //   self.comments = comments
-                    // }
                     isLoading = true
                     let dateFormatterPrint = DateFormatter()
                     dateFormatterPrint.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"

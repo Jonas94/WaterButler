@@ -10,12 +10,12 @@ import SwiftUI
 struct SchedulerView: View {
     
     @State var items = [ScheduledItem]()
-    @State var isWaitingForCall : Bool = true
+    @State var isPaused : Bool = false
     
     var body: some View {
         VStack{
-            if isWaitingForCall{
-                CatView(name: "cat", loading: isWaitingForCall)
+            if(!isPaused){
+            CatView(name: "cat", isPaused: isPaused)
             }
             List{
                 ForEach(items){ item in
@@ -24,6 +24,7 @@ struct SchedulerView: View {
                         label: {
                             ScheduledItemView(scheduledItem: ScheduledItem(id: item.id, time: item.time, duration: item.duration, days: item.days, active: item.active))
                         })
+                }
                 }
                 .navigationTitle("Schemaläggare")
                 .navigationBarTitleDisplayMode(.inline)
@@ -34,14 +35,16 @@ struct SchedulerView: View {
                             Image(systemName: "plus")
                         }
                     )
+                }.onAppear{
+                    isPaused = false
+                    loadData()
+            }
                 }
-            }                .onAppear(perform: loadData)
-        }
-        
     }
     
     
     func loadData() {
+        isPaused = false
         var urlString : String
         if UserDefaults.standard.string(forKey: "piwater_url") == nil
         {
@@ -62,17 +65,18 @@ struct SchedulerView: View {
             
             if let data = data {
                 print("Fetching data...")
-                
                 if let response = try? JSONDecoder().decode([ScheduledItem].self, from: data) {
                     DispatchQueue.main.async {
                         print(response)
                         self.items = response
                     }
+                    isPaused = true
+
                     return
                 }
             }
+
         }.resume()
-        isWaitingForCall = false
     }
 
     
@@ -81,7 +85,7 @@ struct SchedulerView: View {
             
             var items : [ScheduledItem] = [ScheduledItem(id: UUID().uuidString, time: "22:00", duration: 3, days: ["Mån", "Tis", "Ons", "Tors", "Fre"], active: false),
                                            ScheduledItem(id: UUID().uuidString, time: "12:00", duration: 5, days: ["Lör", "Sön"], active: true)]
-            SchedulerView(items: items, isWaitingForCall:  true)
+            SchedulerView(items: items, isPaused:  true)
         }
     }
 }

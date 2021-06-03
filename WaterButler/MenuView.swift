@@ -32,7 +32,7 @@ struct MenuView: View {
                 
                 HStack{
                     NavigationLink(
-                        destination: CatView(name: "cat", loading: true),
+                        destination: CatView(name: "cat", isPaused: false),
                         label: {
                             MenuButtonView(text: "Katten!", imageName: "gift")
                         })
