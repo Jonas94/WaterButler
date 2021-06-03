@@ -113,7 +113,7 @@ func isEnabled(day : String, scheduledItem : ScheduledItem) -> Binding<Bool> {
                 let indexOfDay = scheduledItem.days.firstIndex(of: day)
                 scheduledItem.days.remove(at: indexOfDay!)
             }
-            apiCall.saveData(scheduledItem: scheduledItem)
+            apiCall.saveScheduledItem(scheduledItem: scheduledItem)
             
         })
     

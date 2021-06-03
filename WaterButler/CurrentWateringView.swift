@@ -11,21 +11,28 @@ struct CurrentWateringView: View {
     var body: some View {
         
         VStack{
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             
-            Button(action: {
-                print("button pressed in current watering view")
-            }, label: {
-                Text("STOP")
-            })
-            
-            Button(action: {
-                print("button pressed in current watering view")
-            }, label: {
-                Text("Reload")
-            })
+            VStack{
+                Text("Start: \(5)")
+                Text("Stopp: \(5)")
 
+            }
             
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).padding()
+            
+            Button(action: {
+                print("button pressed in current watering view")
+            }, label: {
+                Image(systemName: "stop.circle.fill").foregroundColor(.red).font(.system(size: 100))
+            }).padding()
+            
+            Button(action: {
+                print("button pressed in current watering view")
+            }, label: {
+                Image(systemName: "arrow.triangle.2.circlepath").foregroundColor(Color(red: 0 / 255, green: 0 / 255, blue: 128 / 255)
+).font(.system(size: 100))
+
+            }).padding(.top, 200)
         }
     }
 }

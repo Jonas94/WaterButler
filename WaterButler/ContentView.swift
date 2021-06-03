@@ -61,7 +61,6 @@ struct MainView: View {
     @State var date = Date()
     @State var isLoading = false;
     @State var sliderValue: Double = 0
-    @State var comments = [Comments]()
     let stanDefaults = UserDefaults.standard
 
     var body: some View {

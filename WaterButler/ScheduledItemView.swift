@@ -21,7 +21,7 @@ struct ScheduledItemView :View{
                 Toggle(isOn: Binding<Bool>(get: { scheduledItem.active },
                                            set: {newValue in
                                             scheduledItem.active = newValue
-                                            apiCall.saveData(scheduledItem: scheduledItem)
+                                            apiCall.saveScheduledItem(scheduledItem: scheduledItem)
                                            }
                 )){
                     //DO NOTHING

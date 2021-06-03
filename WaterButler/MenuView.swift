@@ -40,10 +40,9 @@ struct MenuView: View {
                 .padding(.top, 30)
                 HStack {
                     NavigationLink(
-                    
-                        destination: PlannerView(),
+                        destination: CurrentWateringView(),
                         label: {
-                            MenuButtonView(text: "test4", imageName: "gift")
+                            MenuButtonView(text: "Aktuell vattning", imageName: "gift")
                         })
                
                 }
