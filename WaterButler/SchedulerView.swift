@@ -42,7 +42,17 @@ struct SchedulerView: View {
     
     
     func loadData() {
-        guard let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/getAllRecurringWaterings") else {
+        var urlString : String
+        if UserDefaults.standard.string(forKey: "piwater_url") == nil
+        {
+            urlString = "localhost:8090"
+            print("userdefaults is nil")
+            
+        }
+        else {
+            urlString = UserDefaults.standard.string(forKey: "piwater_url")!
+        }
+            guard let url = URL(string: "\(urlString)/getAllRecurringWaterings") else {
             print("Your API end point is Invalid")
             return
         }
