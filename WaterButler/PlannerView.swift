@@ -54,34 +54,12 @@ struct PlannerView: View {
                 
                 Button(action: {
                     print("Button action")
-                    isLoading = true
+                    //isLoading = true
                     let dateFormatterPrint = DateFormatter()
                     dateFormatterPrint.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                     
-                    let bodyData = "minutesToWater=\(Int(sliderValue))&startDate=\(dateFormatterPrint.string(from: date))"
-                    // create post request
-                    let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/enableWatering")!
-                    var request = URLRequest(url: url)
-                    request.httpMethod = "POST"
-                    request.httpBody = bodyData.data(using: .utf8)
-                    
-                    print(request)
-                    
-                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                        guard let data = data, error == nil else {
-                            print(error?.localizedDescription ?? "No data")
-                            return
-                        }
-                        let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                        if let responseJSON = responseJSON as? [String: Any] {
-                            print(responseJSON)
-                            isLoading = false
-                            
-                        }
-                    }
-                    
-                    task.resume()
-                    
+                    let apiCall = ApiCall()
+                    apiCall.postEnableWatering(sliderValue: sliderValue, startDate: dateFormatterPrint.string(from: date))
                     
                 }) {
                     HStack {
