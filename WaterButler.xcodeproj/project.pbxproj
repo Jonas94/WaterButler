@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5018C0D8669B78BF08E34206 /* Pods_WaterButler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5330FAC8F8565B9F30FAE /* Pods_WaterButler.framework */; };
+		731FD91F264DC4F2004BC63A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 731FD91E264DC4F2004BC63A /* Settings.bundle */; };
+		731FD921264DC5BC004BC63A /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731FD920264DC5BC004BC63A /* SettingsBundleHelper.swift */; };
+		735BACD92641D67400F978E3 /* WaterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BACD82641D67400F978E3 /* WaterInput.swift */; };
+		735DBF662645DF7200A3132E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 735DBF652645DF7200A3132E /* GoogleService-Info.plist */; };
+		7363AE1F26474409000BED7D /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7363AE1E26474409000BED7D /* PlannerView.swift */; };
+		7382D62C263C9DB500307863 /* WaterButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D62B263C9DB500307863 /* WaterButlerApp.swift */; };
+		7382D62E263C9DB500307863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D62D263C9DB500307863 /* ContentView.swift */; };
+		7382D630263C9DB600307863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7382D62F263C9DB600307863 /* Assets.xcassets */; };
+		7382D633263C9DB600307863 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7382D632263C9DB600307863 /* Preview Assets.xcassets */; };
+		7382D63F263CB07200307863 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D63E263CB07200307863 /* Model.swift */; };
+		7382D641263CB63A00307863 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D640263CB63A00307863 /* ApiCall.swift */; };
+		7382D643263CB66000307863 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D642263CB66000307863 /* Comments.swift */; };
+		73B2C1142663C23300015984 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B2C1132663C23300015984 /* MenuView.swift */; };
+		73BEF66C266534DB00C9A984 /* SchedulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF66B266534DB00C9A984 /* SchedulerView.swift */; };
+		73BEF66E266583C900C9A984 /* EditScheduledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */; };
+		73BEF67026660ACE00C9A984 /* ScheduledItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF66F26660ACE00C9A984 /* ScheduledItem.swift */; };
+		73BEF67226663F8800C9A984 /* ScheduledItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF67126663F8800C9A984 /* ScheduledItems.swift */; };
+		73BEF6762666BB5A00C9A984 /* 21139-cat-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BEF6752666BB5A00C9A984 /* 21139-cat-animation.json */; };
+		73BEF6782666C15600C9A984 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF6772666C15600C9A984 /* CatView.swift */; };
+		73BEF67A2666C26700C9A984 /* cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BEF6792666C26700C9A984 /* cat.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		731FD91E264DC4F2004BC63A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		731FD920264DC5BC004BC63A /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
+		735BACD82641D67400F978E3 /* WaterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterInput.swift; sourceTree = "<group>"; };
+		735DBF652645DF7200A3132E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7363AE1E26474409000BED7D /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
+		7382D628263C9DB500307863 /* WaterButler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterButler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7382D62B263C9DB500307863 /* WaterButlerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterButlerApp.swift; sourceTree = "<group>"; };
+		7382D62D263C9DB500307863 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7382D62F263C9DB600307863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7382D632263C9DB600307863 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7382D634263C9DB600307863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7382D63E263CB07200307863 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		7382D640263CB63A00307863 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
+		7382D642263CB66000307863 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		73B2C1132663C23300015984 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		73BEF66B266534DB00C9A984 /* SchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerView.swift; sourceTree = "<group>"; };
+		73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduledItemView.swift; sourceTree = "<group>"; };
+		73BEF66F26660ACE00C9A984 /* ScheduledItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledItem.swift; sourceTree = "<group>"; };
+		73BEF67126663F8800C9A984 /* ScheduledItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledItems.swift; sourceTree = "<group>"; };
+		73BEF6752666BB5A00C9A984 /* 21139-cat-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "21139-cat-animation.json"; sourceTree = "<group>"; };
+		73BEF6772666C15600C9A984 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
+		73BEF6792666C26700C9A984 /* cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cat.json; sourceTree = "<group>"; };
+		842EE97418CA01A4CCE27287 /* Pods-WaterButler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterButler.debug.xcconfig"; path = "Target Support Files/Pods-WaterButler/Pods-WaterButler.debug.xcconfig"; sourceTree = "<group>"; };
+		8535728B057734A2AC4F74AD /* Pods-WaterButler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterButler.release.xcconfig"; path = "Target Support Files/Pods-WaterButler/Pods-WaterButler.release.xcconfig"; sourceTree = "<group>"; };
+		BBE5330FAC8F8565B9F30FAE /* Pods_WaterButler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterButler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7382D625263C9DB500307863 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5018C0D8669B78BF08E34206 /* Pods_WaterButler.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D310AE01E0B664AE8BCC9C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBE5330FAC8F8565B9F30FAE /* Pods_WaterButler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7382D61F263C9DB500307863 = {
+			isa = PBXGroup;
+			children = (
+				7382D62A263C9DB500307863 /* WaterButler */,
+				7382D629263C9DB500307863 /* Products */,
+				F6A2D348A6673D9AAB512192 /* Pods */,
+				6D310AE01E0B664AE8BCC9C1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7382D629263C9DB500307863 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7382D628263C9DB500307863 /* WaterButler.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7382D62A263C9DB500307863 /* WaterButler */ = {
+			isa = PBXGroup;
+			children = (
+				7382D62B263C9DB500307863 /* WaterButlerApp.swift */,
+				7382D62D263C9DB500307863 /* ContentView.swift */,
+				73BEF66F26660ACE00C9A984 /* ScheduledItem.swift */,
+				73BEF67126663F8800C9A984 /* ScheduledItems.swift */,
+				73B2C1132663C23300015984 /* MenuView.swift */,
+				7363AE1E26474409000BED7D /* PlannerView.swift */,
+				73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */,
+				73BEF6752666BB5A00C9A984 /* 21139-cat-animation.json */,
+				73BEF66B266534DB00C9A984 /* SchedulerView.swift */,
+				73BEF6792666C26700C9A984 /* cat.json */,
+				73BEF6772666C15600C9A984 /* CatView.swift */,
+				7382D63E263CB07200307863 /* Model.swift */,
+				7382D640263CB63A00307863 /* ApiCall.swift */,
+				7382D642263CB66000307863 /* Comments.swift */,
+				735BACD82641D67400F978E3 /* WaterInput.swift */,
+				7382D62F263C9DB600307863 /* Assets.xcassets */,
+				735DBF652645DF7200A3132E /* GoogleService-Info.plist */,
+				7382D634263C9DB600307863 /* Info.plist */,
+				7382D631263C9DB600307863 /* Preview Content */,
+				731FD91E264DC4F2004BC63A /* Settings.bundle */,
+				731FD920264DC5BC004BC63A /* SettingsBundleHelper.swift */,
+			);
+			path = WaterButler;
+			sourceTree = "<group>";
+		};
+		7382D631263C9DB600307863 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7382D632263C9DB600307863 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F6A2D348A6673D9AAB512192 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				842EE97418CA01A4CCE27287 /* Pods-WaterButler.debug.xcconfig */,
+				8535728B057734A2AC4F74AD /* Pods-WaterButler.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7382D627263C9DB500307863 /* WaterButler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7382D637263C9DB600307863 /* Build configuration list for PBXNativeTarget "WaterButler" */;
+			buildPhases = (
+				716274896834CEF788BD5E2D /* [CP] Check Pods Manifest.lock */,
+				7382D624263C9DB500307863 /* Sources */,
+				7382D625263C9DB500307863 /* Frameworks */,
+				7382D626263C9DB500307863 /* Resources */,
+				3CF3C49CC2278CE6C63FD291 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterButler;
+			productName = WaterButler;
+			productReference = 7382D628263C9DB500307863 /* WaterButler.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7382D620263C9DB500307863 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					7382D627263C9DB500307863 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 7382D623263C9DB500307863 /* Build configuration list for PBXProject "WaterButler" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7382D61F263C9DB500307863;
+			productRefGroup = 7382D629263C9DB500307863 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7382D627263C9DB500307863 /* WaterButler */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7382D626263C9DB500307863 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				731FD91F264DC4F2004BC63A /* Settings.bundle in Resources */,
+				7382D633263C9DB600307863 /* Preview Assets.xcassets in Resources */,
+				73BEF67A2666C26700C9A984 /* cat.json in Resources */,
+				73BEF6762666BB5A00C9A984 /* 21139-cat-animation.json in Resources */,
+				7382D630263C9DB600307863 /* Assets.xcassets in Resources */,
+				735DBF662645DF7200A3132E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CF3C49CC2278CE6C63FD291 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterButler/Pods-WaterButler-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterButler/Pods-WaterButler-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterButler/Pods-WaterButler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		716274896834CEF788BD5E2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterButler-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7382D624263C9DB500307863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73BEF66C266534DB00C9A984 /* SchedulerView.swift in Sources */,
+				731FD921264DC5BC004BC63A /* SettingsBundleHelper.swift in Sources */,
+				7382D63F263CB07200307863 /* Model.swift in Sources */,
+				73BEF67226663F8800C9A984 /* ScheduledItems.swift in Sources */,
+				7382D643263CB66000307863 /* Comments.swift in Sources */,
+				7382D62E263C9DB500307863 /* ContentView.swift in Sources */,
+				73BEF66E266583C900C9A984 /* EditScheduledItemView.swift in Sources */,
+				73B2C1142663C23300015984 /* MenuView.swift in Sources */,
+				7382D641263CB63A00307863 /* ApiCall.swift in Sources */,
+				73BEF6782666C15600C9A984 /* CatView.swift in Sources */,
+				735BACD92641D67400F978E3 /* WaterInput.swift in Sources */,
+				7382D62C263C9DB500307863 /* WaterButlerApp.swift in Sources */,
+				73BEF67026660ACE00C9A984 /* ScheduledItem.swift in Sources */,
+				7363AE1F26474409000BED7D /* PlannerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7382D635263C9DB600307863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7382D636263C9DB600307863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7382D638263C9DB600307863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 842EE97418CA01A4CCE27287 /* Pods-WaterButler.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterButler/Preview Content\"";
+				DEVELOPMENT_TEAM = ZLKNMX37J6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WaterButler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonas.WaterButler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7382D639263C9DB600307863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8535728B057734A2AC4F74AD /* Pods-WaterButler.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterButler/Preview Content\"";
+				DEVELOPMENT_TEAM = ZLKNMX37J6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WaterButler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonas.WaterButler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7382D623263C9DB500307863 /* Build configuration list for PBXProject "WaterButler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7382D635263C9DB600307863 /* Debug */,
+				7382D636263C9DB600307863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7382D637263C9DB600307863 /* Build configuration list for PBXNativeTarget "WaterButler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7382D638263C9DB600307863 /* Debug */,
+				7382D639263C9DB600307863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7382D620263C9DB500307863 /* Project object */;
+}
