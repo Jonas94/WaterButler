@@ -65,7 +65,7 @@ class ApiCall {
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
          
-        let postString = "id=\(scheduledItem.id)&days=\(scheduledItem.days.joined(separator: ","))&time=\(scheduledItem.time)&duration=\(Int(scheduledItem.duration))";
+        let postString = "id=\(scheduledItem.id)&days=\(scheduledItem.days.joined(separator: ","))&time=\(scheduledItem.time)&duration=\(Int(scheduledItem.duration))&active=\(scheduledItem.active)";
         // Set HTTP Request Body
         request.httpBody = postString.data(using: String.Encoding.utf8);
         // Perform HTTP Request
