@@ -31,18 +31,13 @@ struct SchedulerView: View {
                     NavigationLink(
                         destination: EditScheduledItemView(scheduledItem: ScheduledItem(id: "UUID1", time: "12:00", duration: 0, days: [], active: true), editMode: false),
                         label: {
-                            
                             Image(systemName: "plus")
-                            
                         }
                     )
-                    
                 }
-                
             }                .onAppear(perform: loadData)
-
         }
-       
+        
     }
     
     
