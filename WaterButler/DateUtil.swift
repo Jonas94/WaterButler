@@ -6,3 +6,9 @@
 //
 
 import Foundation
+public class DateUtil{
+   static func getDateInSeconds(timeSince1970: Double) -> Date{
+        
+        Date(timeIntervalSince1970: timeSince1970 / 1000)
+    }
+}

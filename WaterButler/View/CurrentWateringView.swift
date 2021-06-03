@@ -9,16 +9,17 @@ import SwiftUI
 
 struct CurrentWateringView: View {
     var body: some View {
-        
         VStack{
             
             VStack{
-                Text("Start: \(5)")
-                Text("Stopp: \(5)")
-
+               /* Text("Start: \(watering.startDate)")
+                Text("Stopp: \(watering.stopDate)")
+                Text("antal minuter: \(watering.minutesToWater)")
+*/
             }
             
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/).padding()
+        
             
             Button(action: {
                 print("button pressed in current watering view")
