@@ -34,92 +34,71 @@ struct EditScheduledItemView: View {
             HStack{
                 
                 VStack{
-      
+                    
                     ForEach(0..<4, id: \.self){ key in
-                     
-                     Toggle(isOn: Binding<Bool>(get: { scheduledItem.days.contains(days[key]) },
-                     
-                     set: {
-                     
-                     if $0 {
-                     self.scheduledItem.days.append(days[key])
-                     } else {
-                     self.scheduledItem.days = self.scheduledItem.days.filter { $0 != days[key] }
-                     }
-                     })) {
-                     Text(translatedDays[key])
-                     }
-               }}.padding()
-            
-            VStack{
-                ForEach(4..<days.count, id: \.self){ key in
-                 
-                 Toggle(isOn: Binding<Bool>(get: { scheduledItem.days.contains(days[key]) },
-                 
-                 set: {
-                 
-                 if $0 {
-                 self.scheduledItem.days.append(days[key])
-                 } else {
-                 self.scheduledItem.days = self.scheduledItem.days.filter { $0 != days[key] }
-                 }
-                 })) {
-                 Text(translatedDays[key])
-                 }
-           }
+                        
+                        Toggle(isOn: Binding<Bool>(get: { scheduledItem.days.contains(days[key]) },
+                                                   
+                                                   set: {
+                                                    
+                                                    if $0 {
+                                                        self.scheduledItem.days.append(days[key])
+                                                    } else {
+                                                        self.scheduledItem.days = self.scheduledItem.days.filter { $0 != days[key] }
+                                                    }
+                                                   })) {
+                            Text(translatedDays[key])
+                        }
+                    }}.padding()
+                
+                VStack{
+                    ForEach(4..<days.count, id: \.self){ key in
+                        
+                        Toggle(isOn: Binding<Bool>(get: { scheduledItem.days.contains(days[key]) },
+                                                   
+                                                   set: {
+                                                    
+                                                    if $0 {
+                                                        self.scheduledItem.days.append(days[key])
+                                                    } else {
+                                                        self.scheduledItem.days = self.scheduledItem.days.filter { $0 != days[key] }
+                                                    }
+                                                   })) {
+                            Text(translatedDays[key])
+                        }
+                    }
+                }.padding()
             }.padding()
-        }.padding()
-        
-        HStack {
-            Image(systemName: "minus")
-            Text("🌵")
-            Slider(value: getDuration(scheduledItem: scheduledItem), in: 0...30, step: 1)
-                //
-                .padding()
-                .accentColor(Color.blue)
-                .overlay(RoundedRectangle(cornerRadius: 15.0)
-                            .stroke(lineWidth: 3.0)
-                            .foregroundColor(Color.green))
-            Text("💦")
-            Image(systemName: "plus")
-        }.foregroundColor(Color.green).padding()
-        Text("Vattna i \(scheduledItem.duration, specifier: "%.0f") minuter")
-    }
-    .navigationTitle(editMode ? "Ändra" : "Lägg till")
-    .navigationBarTitleDisplayMode(.inline)
-    .navigationBarItems(trailing: (
-    Button(action: {
-    print("button pressed")
-    saveData(scheduledItem: scheduledItem)
-    
-    }) {
-    Image(systemName: "checkmark")
-    .imageScale(.large)
-    }
-    ))
-}
-}
-
-func isEnabled(day : String, scheduledItem : ScheduledItem) -> Binding<Bool> {
-    let apiCall = ApiCall()
-    
-    return Binding<Bool>(
-        get: { scheduledItem.days.contains(day) },
-        set: { newValue in
-            if(newValue) {
-                scheduledItem.days.append(day)
-            }
-            else{
-                let indexOfDay = scheduledItem.days.firstIndex(of: day)
-                scheduledItem.days.remove(at: indexOfDay!)
-            }
-            apiCall.saveScheduledItem(scheduledItem: scheduledItem)
             
-        })
-    
+            HStack {
+                Image(systemName: "minus")
+                Text("🌵")
+                Slider(value: getDuration(scheduledItem: scheduledItem), in: 0...30, step: 1)
+                    //
+                    .padding()
+                    .accentColor(Color.blue)
+                    .overlay(RoundedRectangle(cornerRadius: 15.0)
+                                .stroke(lineWidth: 3.0)
+                                .foregroundColor(Color.green))
+                Text("💦")
+                Image(systemName: "plus")
+            }.foregroundColor(Color.green).padding()
+            Text("Vattna i \(scheduledItem.duration, specifier: "%.0f") minuter")
+        }
+        .navigationTitle(editMode ? "Ändra" : "Lägg till")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing: (
+            Button(action: {
+                print("button pressed")
+                saveData(scheduledItem: scheduledItem)
+                
+            }) {
+                Image(systemName: "checkmark")
+                    .imageScale(.large)
+            }
+        ))
+    }
 }
-
-
 
 func getTime(scheduledItem: ScheduledItem) -> Binding<Date> {
     let dateFormatter = DateFormatter()
