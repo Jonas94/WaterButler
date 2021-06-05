@@ -7,7 +7,9 @@
 
 import Foundation
 
-class ApiCall {
+class ApiCall :ObservableObject{
+
+    @Published var watering : Watering1? = nil
     
     func postEnableWatering(sliderValue: Double, startDate: String){
         let bodyData = "minutesToWater=\(Int(sliderValue))&startDate=\(startDate)"
@@ -63,9 +65,10 @@ class ApiCall {
     }
     
     func loadCurrentWatering() {
-        
         // Prepare URL
-        let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/loadCurrentWatering")
+        //var watering : Watering
+        
+        let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/getCurrentWatering")
         guard let requestUrl = url else { fatalError() }
         // Prepare URL Request Object
         var request = URLRequest(url: requestUrl)
@@ -81,13 +84,27 @@ class ApiCall {
             }
             
             // Convert HTTP Response Data to a String
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
+             if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 print("Response data string:\n \(dataString)")
+
+                if let response = try? JSONDecoder().decode(Watering1.self, from: data) {
+                    DispatchQueue.main.async {
+                        print(response)
+                        self.watering = response
+                    }
+                    if let error = error {
+                        print("Error took place \(error)")
+                        return
+                    }
+                    
+
             }
+            
         }
+        
+    }
         task.resume()
-        
-        
+
     }
     
     

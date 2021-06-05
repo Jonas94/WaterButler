@@ -7,16 +7,18 @@
 
 import Foundation
 
-struct Watering{
-    let minutesToWater: Int
+struct Watering : Decodable{
     let startDate: Date
     let stopDate: Date
+    let duration: Int
 
-    init(startDate : Double, stopDate : Double, minutesToWater : Int) {
+    init(startDate : Double, stopDate : Double, duration : Int) {
         self.startDate = DateUtil.getDateInSeconds(timeSince1970: startDate)
         self.stopDate = DateUtil.getDateInSeconds(timeSince1970: stopDate)
-        self.minutesToWater = minutesToWater
+        self.duration = duration
     }
+    
+
     
    
 
