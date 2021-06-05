@@ -43,7 +43,9 @@ struct CurrentWateringView: View {
 ).font(.system(size: 100))
 
             }).padding(.top, 200)
-        }
+        }.onAppear(perform: {
+            apiCall.loadCurrentWatering()
+        })
     }
 }
 

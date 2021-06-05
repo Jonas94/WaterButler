@@ -11,11 +11,13 @@ class ApiCall :ObservableObject{
 
     @Published var watering : Watering1? = nil
     
+    
     func postEnableWatering(sliderValue: Double, startDate: String){
         let bodyData = "minutesToWater=\(Int(sliderValue))&startDate=\(startDate)"
         // create post request
-        let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/enableWatering")!
-        var request = URLRequest(url: url)
+        let url = getUrl(endpoint: "enableWatering")
+        guard let requestUrl = url else { fatalError() }
+        var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
         request.httpBody = bodyData.data(using: .utf8)
         
@@ -38,7 +40,7 @@ class ApiCall :ObservableObject{
     func saveScheduledItem(scheduledItem : ScheduledItem) {
         
         // Prepare URL
-        let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/saveRecurringWatering")
+        let url = getUrl(endpoint: "saveRecurringWatering")
         guard let requestUrl = url else { fatalError() }
         // Prepare URL Request Object
         var request = URLRequest(url: requestUrl)
@@ -68,7 +70,7 @@ class ApiCall :ObservableObject{
         // Prepare URL
         //var watering : Watering
         
-        let url = URL(string: UserDefaults.standard.string(forKey: "piwater_url")!+"/getCurrentWatering")
+        let url = getUrl(endpoint: "getCurrentWatering")
         guard let requestUrl = url else { fatalError() }
         // Prepare URL Request Object
         var request = URLRequest(url: requestUrl)
@@ -96,15 +98,28 @@ class ApiCall :ObservableObject{
                         print("Error took place \(error)")
                         return
                     }
-                    
-
             }
-            
         }
         
     }
         task.resume()
 
+    }
+    
+    func getUrl(endpoint: String) -> URL? {
+    var urlString : String
+    if UserDefaults.standard.string(forKey: "piwater_url") == nil
+    {
+        urlString = "localhost:8090"
+        print("userdefaults is nil")
+        
+    }
+    else {
+        urlString = UserDefaults.standard.string(forKey: "piwater_url")!
+    }
+
+        return URL(string: "\(urlString)/\(endpoint)")
+      
     }
     
     
