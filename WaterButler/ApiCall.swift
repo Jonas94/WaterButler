@@ -104,11 +104,45 @@ class ApiCall :ObservableObject{
                     }
             }
         }
-        
     }
         task.resume()
-
     }
+    
+    func stopCurrentWatering() {
+        
+        let url = getUrl(endpoint: "stop")
+        guard let requestUrl = url else { fatalError() }
+        // Prepare URL Request Object
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        
+        // Perform HTTP Request
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            // Check for Error
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            // Convert HTTP Response Data to a String
+             if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Response data string:\n \(dataString)")
+
+                if let response = try? JSONDecoder().decode(Watering1.self, from: data) {
+                    DispatchQueue.main.async {
+                        print(response)
+                    }
+                    if let error = error {
+                        print("Error took place \(error)")
+                        return
+                    }
+            }
+        }
+    }
+        task.resume()
+    }
+    
     
     func getUrl(endpoint: String) -> URL? {
     var urlString : String
@@ -125,8 +159,4 @@ class ApiCall :ObservableObject{
         return URL(string: "\(urlString)/\(endpoint)")
       
     }
-    
-    
-    
-    
 }
