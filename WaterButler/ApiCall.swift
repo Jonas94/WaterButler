@@ -10,7 +10,8 @@ import Foundation
 class ApiCall :ObservableObject{
 
     @Published var watering : Watering1? = nil
-    
+    @Published var enabledWateringResponse : String?
+
     
     func postEnableWatering(sliderValue: Double, startDate: String){
         let bodyData = "minutesToWater=\(Int(sliderValue))&startDate=\(startDate)"
@@ -29,8 +30,11 @@ class ApiCall :ObservableObject{
                 return
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
+            if let responseJSON = responseJSON as? [String: String] {
                 print(responseJSON)
+                self.enabledWateringResponse = responseJSON["message"]
+                print(self.enabledWateringResponse)
+
             }
         }
         
