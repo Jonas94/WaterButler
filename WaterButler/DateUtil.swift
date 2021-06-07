@@ -11,4 +11,13 @@ public class DateUtil{
         
         Date(timeIntervalSince1970: timeSince1970 / 1000)
     }
+    
+    
+    static func getSecondsSince1970FromDate(date: Date) -> TimeInterval{
+         
+        date.timeIntervalSince1970
+     }
+     
+     
+    
 }
