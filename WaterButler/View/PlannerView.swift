@@ -12,10 +12,9 @@ struct PlannerView: View {
     @State var isLoading = false;
     @State var sliderValue: Double = 0
     @State var response : String = ""
-    let apiCall = ApiCall()
-    
+    @ObservedObject var apiCall = ApiCall()
     var body: some View {
-        
+
         ZStack{
             VStack{
                 VStack {
@@ -62,7 +61,6 @@ struct PlannerView: View {
                         dateFormatterPrint.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                         
                         apiCall.postEnableWatering(sliderValue: sliderValue, startDate: dateFormatterPrint.string(from: date))
-                        apiCall.objectWillChange.send()
                         
                     }){
                         HStack {
@@ -71,11 +69,10 @@ struct PlannerView: View {
                         }
                     }
                 }
-            }
-             if(apiCall.enabledWateringResponse != nil){
-               ScheduledSuccessView(successText: apiCall.enabledWateringResponse!)
-            
-             }
+            }.sheet(isPresented: $apiCall.showSuccessScreen, content: {
+                ScheduledSuccessView(enabledWateringResponse:  apiCall.enabledWateringResponse!)
+            })
+        
         }
     }
 }

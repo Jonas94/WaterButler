@@ -11,8 +11,9 @@ class ApiCall :ObservableObject{
 
     @Published var watering : Watering1? = nil
     @Published var waterings : [Watering1] = []
+    @Published var showSuccessScreen : Bool = false
 
-    @Published var enabledWateringResponse : String?
+    @Published var enabledWateringResponse : EnabledWateringResponse? = nil
 
     
     func postEnableWatering(sliderValue: Double, startDate: String){
@@ -23,18 +24,20 @@ class ApiCall :ObservableObject{
         var request = URLRequest(url: requestUrl)
         request.httpMethod = "POST"
         request.httpBody = bodyData.data(using: .utf8)
-        
-        print(request)
-        
+                
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
                 return
             }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: String] {
+          
+            if let responseJSON = try? JSONDecoder().decode(EnabledWateringResponse.self, from: data) {
                 print(responseJSON)
-                self.enabledWateringResponse = responseJSON["message"]
+                DispatchQueue.main.async {
+                    print(responseJSON)
+                    self.enabledWateringResponse = responseJSON
+                    self.showSuccessScreen = true
+                }
             }
         }
         

@@ -18,4 +18,21 @@ public class DateUtil{
         date.timeIntervalSince1970
      }
     
+    static func getDateFormatted(date: TimeInterval) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "sv_SE")
+        dateFormatter.setLocalizedDateFormatFromTemplate("HH:mm yyyy EEEEMMMMd ")
+        return dateFormatter.string(from: DateUtil.getDateInSeconds(timeSince1970:date))
+     }
+    
+    
+    private var formatter: DateFormatter = {
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatterPrint
+    }()
+    
+    
+    
 }
