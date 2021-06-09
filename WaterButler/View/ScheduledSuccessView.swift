@@ -26,14 +26,29 @@ struct ScheduledSuccessView: View {
                 Text(successText).foregroundColor(.white)
                     .font(.system(size: 20))
             
-                Button("Coolt!") {
-                    apiCall.showSuccessScreen = false
-                    apiCall.objectWillChange.send()
-                    self.presentationMode.wrappedValue.dismiss()
+                VStack{
 
+                Button(action: {
+                    apiCall.showSuccessScreen = false
+                    apiCall.objectWillChange.send() //TODO: remove this?
+                    self.presentationMode.wrappedValue.dismiss()
                     
-                }.padding(.top, 100)
-                
+                }) {
+                  Image(systemName: "checkmark.circle")
+                  Text("Schysst kompis!")
+           
+                }
+                .padding()
+                .font(.title)
+                //.background(Color.green)
+
+                .foregroundColor(.white)
+                .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.purple, lineWidth: 5)
+            )
+                    
+                }.padding(.top, 50)
             }.padding()
             
         }.opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
