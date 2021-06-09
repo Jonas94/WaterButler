@@ -10,16 +10,22 @@
 		5018C0D8669B78BF08E34206 /* Pods_WaterButler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5330FAC8F8565B9F30FAE /* Pods_WaterButler.framework */; };
 		731FD91F264DC4F2004BC63A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 731FD91E264DC4F2004BC63A /* Settings.bundle */; };
 		731FD921264DC5BC004BC63A /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731FD920264DC5BC004BC63A /* SettingsBundleHelper.swift */; };
-		735BACD92641D67400F978E3 /* WaterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735BACD82641D67400F978E3 /* WaterInput.swift */; };
+		7359244026692DFB006BCC72 /* ScheduledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359243F26692DFB006BCC72 /* ScheduledItemView.swift */; };
+		7359244226692EB3006BCC72 /* CurrentWateringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359244126692EB3006BCC72 /* CurrentWateringView.swift */; };
+		73592446266969EF006BCC72 /* Watering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73592445266969EF006BCC72 /* Watering.swift */; };
+		7359244826696E00006BCC72 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359244726696E00006BCC72 /* DateUtil.swift */; };
+		7359244A26697813006BCC72 /* Watering1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359244926697813006BCC72 /* Watering1.swift */; };
+		7359244C266BF689006BCC72 /* ScheduledSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359244B266BF689006BCC72 /* ScheduledSuccessView.swift */; };
+		7359244F266D459D006BCC72 /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7359244E266D459D006BCC72 /* CountdownTimerView.swift */; };
 		735DBF662645DF7200A3132E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 735DBF652645DF7200A3132E /* GoogleService-Info.plist */; };
 		7363AE1F26474409000BED7D /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7363AE1E26474409000BED7D /* PlannerView.swift */; };
 		7382D62C263C9DB500307863 /* WaterButlerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D62B263C9DB500307863 /* WaterButlerApp.swift */; };
 		7382D62E263C9DB500307863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D62D263C9DB500307863 /* ContentView.swift */; };
 		7382D630263C9DB600307863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7382D62F263C9DB600307863 /* Assets.xcassets */; };
 		7382D633263C9DB600307863 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7382D632263C9DB600307863 /* Preview Assets.xcassets */; };
-		7382D63F263CB07200307863 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D63E263CB07200307863 /* Model.swift */; };
 		7382D641263CB63A00307863 /* ApiCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D640263CB63A00307863 /* ApiCall.swift */; };
-		7382D643263CB66000307863 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7382D642263CB66000307863 /* Comments.swift */; };
+		73866CAE266F2F8400C1D3D7 /* HistoricalWateringsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73866CAD266F2F8400C1D3D7 /* HistoricalWateringsView.swift */; };
+		73866CB0266F466F00C1D3D7 /* WateringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73866CAF266F466F00C1D3D7 /* WateringView.swift */; };
 		73B2C1142663C23300015984 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B2C1132663C23300015984 /* MenuView.swift */; };
 		73BEF66C266534DB00C9A984 /* SchedulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF66B266534DB00C9A984 /* SchedulerView.swift */; };
 		73BEF66E266583C900C9A984 /* EditScheduledItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */; };
@@ -28,12 +34,20 @@
 		73BEF6762666BB5A00C9A984 /* 21139-cat-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BEF6752666BB5A00C9A984 /* 21139-cat-animation.json */; };
 		73BEF6782666C15600C9A984 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF6772666C15600C9A984 /* CatView.swift */; };
 		73BEF67A2666C26700C9A984 /* cat.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BEF6792666C26700C9A984 /* cat.json */; };
+		73BEF67C2668C5E200C9A984 /* ToggleUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BEF67B2668C5E200C9A984 /* ToggleUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		731FD91E264DC4F2004BC63A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		731FD920264DC5BC004BC63A /* SettingsBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleHelper.swift; sourceTree = "<group>"; };
-		735BACD82641D67400F978E3 /* WaterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterInput.swift; sourceTree = "<group>"; };
+		7359243F26692DFB006BCC72 /* ScheduledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledItemView.swift; sourceTree = "<group>"; };
+		7359244126692EB3006BCC72 /* CurrentWateringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWateringView.swift; sourceTree = "<group>"; };
+		73592445266969EF006BCC72 /* Watering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watering.swift; sourceTree = "<group>"; };
+		7359244726696E00006BCC72 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		7359244926697813006BCC72 /* Watering1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watering1.swift; sourceTree = "<group>"; };
+		7359244B266BF689006BCC72 /* ScheduledSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledSuccessView.swift; sourceTree = "<group>"; };
+		7359244D266CEAE0006BCC72 /* WaterButler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterButler.entitlements; sourceTree = "<group>"; };
+		7359244E266D459D006BCC72 /* CountdownTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		735DBF652645DF7200A3132E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7363AE1E26474409000BED7D /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
 		7382D628263C9DB500307863 /* WaterButler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterButler.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,9 +56,9 @@
 		7382D62F263C9DB600307863 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7382D632263C9DB600307863 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7382D634263C9DB600307863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7382D63E263CB07200307863 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7382D640263CB63A00307863 /* ApiCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCall.swift; sourceTree = "<group>"; };
-		7382D642263CB66000307863 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		73866CAD266F2F8400C1D3D7 /* HistoricalWateringsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalWateringsView.swift; sourceTree = "<group>"; };
+		73866CAF266F466F00C1D3D7 /* WateringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WateringView.swift; sourceTree = "<group>"; };
 		73B2C1132663C23300015984 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		73BEF66B266534DB00C9A984 /* SchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerView.swift; sourceTree = "<group>"; };
 		73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScheduledItemView.swift; sourceTree = "<group>"; };
@@ -53,6 +67,7 @@
 		73BEF6752666BB5A00C9A984 /* 21139-cat-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "21139-cat-animation.json"; sourceTree = "<group>"; };
 		73BEF6772666C15600C9A984 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
 		73BEF6792666C26700C9A984 /* cat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cat.json; sourceTree = "<group>"; };
+		73BEF67B2668C5E200C9A984 /* ToggleUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleUtil.swift; sourceTree = "<group>"; };
 		842EE97418CA01A4CCE27287 /* Pods-WaterButler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterButler.debug.xcconfig"; path = "Target Support Files/Pods-WaterButler/Pods-WaterButler.debug.xcconfig"; sourceTree = "<group>"; };
 		8535728B057734A2AC4F74AD /* Pods-WaterButler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterButler.release.xcconfig"; path = "Target Support Files/Pods-WaterButler/Pods-WaterButler.release.xcconfig"; sourceTree = "<group>"; };
 		BBE5330FAC8F8565B9F30FAE /* Pods_WaterButler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterButler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +93,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		73592443266968A5006BCC72 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7382D62D263C9DB500307863 /* ContentView.swift */,
+				73B2C1132663C23300015984 /* MenuView.swift */,
+				7363AE1E26474409000BED7D /* PlannerView.swift */,
+				73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */,
+				73BEF66B266534DB00C9A984 /* SchedulerView.swift */,
+				73866CAD266F2F8400C1D3D7 /* HistoricalWateringsView.swift */,
+				7359244126692EB3006BCC72 /* CurrentWateringView.swift */,
+				7359244E266D459D006BCC72 /* CountdownTimerView.swift */,
+				7359243F26692DFB006BCC72 /* ScheduledItemView.swift */,
+				73BEF6772666C15600C9A984 /* CatView.swift */,
+				7359244B266BF689006BCC72 /* ScheduledSuccessView.swift */,
+				73866CAF266F466F00C1D3D7 /* WateringView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		73592444266968E5006BCC72 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				73BEF66F26660ACE00C9A984 /* ScheduledItem.swift */,
+				73BEF67126663F8800C9A984 /* ScheduledItems.swift */,
+				73592445266969EF006BCC72 /* Watering.swift */,
+				7359244926697813006BCC72 /* Watering1.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7382D61F263C9DB500307863 = {
 			isa = PBXGroup;
 			children = (
@@ -99,21 +144,15 @@
 		7382D62A263C9DB500307863 /* WaterButler */ = {
 			isa = PBXGroup;
 			children = (
+				7359244D266CEAE0006BCC72 /* WaterButler.entitlements */,
+				73592444266968E5006BCC72 /* Model */,
+				73592443266968A5006BCC72 /* View */,
 				7382D62B263C9DB500307863 /* WaterButlerApp.swift */,
-				7382D62D263C9DB500307863 /* ContentView.swift */,
-				73BEF66F26660ACE00C9A984 /* ScheduledItem.swift */,
-				73BEF67126663F8800C9A984 /* ScheduledItems.swift */,
-				73B2C1132663C23300015984 /* MenuView.swift */,
-				7363AE1E26474409000BED7D /* PlannerView.swift */,
-				73BEF66D266583C900C9A984 /* EditScheduledItemView.swift */,
 				73BEF6752666BB5A00C9A984 /* 21139-cat-animation.json */,
-				73BEF66B266534DB00C9A984 /* SchedulerView.swift */,
+				7359244726696E00006BCC72 /* DateUtil.swift */,
+				73BEF67B2668C5E200C9A984 /* ToggleUtil.swift */,
 				73BEF6792666C26700C9A984 /* cat.json */,
-				73BEF6772666C15600C9A984 /* CatView.swift */,
-				7382D63E263CB07200307863 /* Model.swift */,
 				7382D640263CB63A00307863 /* ApiCall.swift */,
-				7382D642263CB66000307863 /* Comments.swift */,
-				735BACD82641D67400F978E3 /* WaterInput.swift */,
 				7382D62F263C9DB600307863 /* Assets.xcassets */,
 				735DBF652645DF7200A3132E /* GoogleService-Info.plist */,
 				7382D634263C9DB600307863 /* Info.plist */,
@@ -258,18 +297,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7359244C266BF689006BCC72 /* ScheduledSuccessView.swift in Sources */,
 				73BEF66C266534DB00C9A984 /* SchedulerView.swift in Sources */,
+				7359244F266D459D006BCC72 /* CountdownTimerView.swift in Sources */,
 				731FD921264DC5BC004BC63A /* SettingsBundleHelper.swift in Sources */,
-				7382D63F263CB07200307863 /* Model.swift in Sources */,
+				7359244A26697813006BCC72 /* Watering1.swift in Sources */,
+				73866CAE266F2F8400C1D3D7 /* HistoricalWateringsView.swift in Sources */,
 				73BEF67226663F8800C9A984 /* ScheduledItems.swift in Sources */,
-				7382D643263CB66000307863 /* Comments.swift in Sources */,
+				73BEF67C2668C5E200C9A984 /* ToggleUtil.swift in Sources */,
 				7382D62E263C9DB500307863 /* ContentView.swift in Sources */,
+				7359244826696E00006BCC72 /* DateUtil.swift in Sources */,
 				73BEF66E266583C900C9A984 /* EditScheduledItemView.swift in Sources */,
 				73B2C1142663C23300015984 /* MenuView.swift in Sources */,
 				7382D641263CB63A00307863 /* ApiCall.swift in Sources */,
 				73BEF6782666C15600C9A984 /* CatView.swift in Sources */,
-				735BACD92641D67400F978E3 /* WaterInput.swift in Sources */,
+				73866CB0266F466F00C1D3D7 /* WateringView.swift in Sources */,
+				73592446266969EF006BCC72 /* Watering.swift in Sources */,
+				7359244226692EB3006BCC72 /* CurrentWateringView.swift in Sources */,
 				7382D62C263C9DB500307863 /* WaterButlerApp.swift in Sources */,
+				7359244026692DFB006BCC72 /* ScheduledItemView.swift in Sources */,
 				73BEF67026660ACE00C9A984 /* ScheduledItem.swift in Sources */,
 				7363AE1F26474409000BED7D /* PlannerView.swift in Sources */,
 			);
@@ -400,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WaterButler/WaterButler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterButler/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLKNMX37J6;
@@ -423,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WaterButler/WaterButler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterButler/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLKNMX37J6;
