@@ -7,10 +7,10 @@
 
 import SwiftUI
 
+
 struct HistoricalWateringsView: View {
-    let apiCall = ApiCall()
- //   @State var items = [Watering(startDate: 10, stopDate: 20, duration: 5), Watering(startDate: 10, stopDate: 20, duration: 5), Watering(startDate: 10, stopDate: 20, duration: 5)]
-      @State var items = [Watering1(startDate: 10, stopDate: 20, duration: 5), Watering1(startDate: 10, stopDate: 20, duration: 5), Watering1(startDate: 10, stopDate: 20, duration: 5)]
+    @ObservedObject var apiCall = ApiCall()
+    
    // @State var isPaused : Bool = false
     var body: some View {
         VStack{
@@ -18,24 +18,24 @@ struct HistoricalWateringsView: View {
             //CatView(name: "cat", isPaused: true)
             }
             List{
-                ForEach(items, id: \.self){ item in
+                ForEach(apiCall.waterings, id: \.self){ item in
                             WateringView(watering: item)
                 }.padding(.top)
                 }
-            //    .navigationTitle("Schemaläggare")
-              //  .navigationBarTitleDisplayMode(.inline)
             
-                }.onAppear{
-                //    isPaused = false
-                    apiCall.loadHistoricalWaterings()
-                    apiCall.objectWillChange.send()
-                    items = apiCall.waterings
-        }
+               .navigationTitle("Vattningar")
+                .navigationBarTitleDisplayMode(.inline)
+            
+    }
+        .onAppear{
+        //    isPaused = false
+            apiCall.loadHistoricalWaterings()
+                }
+    
     }
 }
 struct HistoricalWateringsView_Previews: PreviewProvider {
     static var previews: some View {
-//        HistoricalWateringsView(items: [Watering(startDate: 10, stopDate: 20, duration: 5)], isPaused: true)
         HistoricalWateringsView()
 
     }
