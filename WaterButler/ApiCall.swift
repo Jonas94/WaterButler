@@ -10,6 +10,8 @@ import Foundation
 class ApiCall :ObservableObject{
 
     @Published var watering : Watering1? = nil
+    @Published var waterings : [Watering1] = []
+
     @Published var enabledWateringResponse : String?
 
     
@@ -33,8 +35,6 @@ class ApiCall :ObservableObject{
             if let responseJSON = responseJSON as? [String: String] {
                 print(responseJSON)
                 self.enabledWateringResponse = responseJSON["message"]
-                print(self.enabledWateringResponse)
-
             }
         }
         
@@ -112,6 +112,51 @@ class ApiCall :ObservableObject{
     }
         task.resume()
     }
+    
+    
+    func loadHistoricalWaterings() {
+        // Prepare URL
+        //var watering : Watering
+        
+        let url = getUrl(endpoint: "getAllWaterings")
+        guard let requestUrl = url else { fatalError() }
+        // Prepare URL Request Object
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        
+        // Perform HTTP Request
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            // Check for Error
+            if let error = error {
+                print("Error took place \(error)")
+                return
+            }
+            
+            // Convert HTTP Response Data to a String
+             if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                print("Response data string:\n \(dataString)")
+
+                if let response = try? JSONDecoder().decode([Watering1].self, from: data) {
+                    DispatchQueue.main.async {
+                        print(response)
+                        self.waterings = response
+                    }
+                    if let error = error {
+                        print("Error took place \(error)")
+                        return
+                    }
+            }
+                else{
+                    DispatchQueue.main.async {
+                        self.watering = nil
+                    }
+                }
+        }
+    }
+        task.resume()
+    }
+    
     
     func stopCurrentWatering() {
         

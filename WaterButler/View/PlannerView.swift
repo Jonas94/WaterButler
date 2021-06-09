@@ -56,8 +56,7 @@ struct PlannerView: View {
                     
                     Text("Vattna i \(sliderValue, specifier: "%.0f") minuter")
                     
-                    Button(action: {
-                        print("Button action")
+                    Button(action: {print("Button action")
                         //isLoading = true
                         let dateFormatterPrint = DateFormatter()
                         dateFormatterPrint.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -65,9 +64,7 @@ struct PlannerView: View {
                         apiCall.postEnableWatering(sliderValue: sliderValue, startDate: dateFormatterPrint.string(from: date))
                         apiCall.objectWillChange.send()
                         
-                    })
-                    
-                    {
+                    }){
                         HStack {
                             Text("Vattna 💦")
                                 .padding()

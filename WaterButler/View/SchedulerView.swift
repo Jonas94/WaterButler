@@ -78,12 +78,19 @@ struct SchedulerView: View {
 
         }.resume()
     }
+    
+    private var formatter: DateFormatter = {
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        return dateFormatterPrint
+    }()
 
     
     struct SchedulerView_Previews: PreviewProvider {
         static var previews: some View {
             
-            var items : [ScheduledItem] = [ScheduledItem(id: UUID().uuidString, time: "22:00", duration: 3, days: ["Mån", "Tis", "Ons", "Tors", "Fre"], active: false),
+            let items : [ScheduledItem] = [ScheduledItem(id: UUID().uuidString, time: "22:00", duration: 3, days: ["Mån", "Tis", "Ons", "Tors", "Fre"], active: false),
                                            ScheduledItem(id: UUID().uuidString, time: "12:00", duration: 5, days: ["Lör", "Sön"], active: true)]
             SchedulerView(items: items, isPaused:  true)
         }

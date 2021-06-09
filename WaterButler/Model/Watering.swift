@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Watering : Decodable{
+struct Watering : Decodable, Hashable {
     let startDate: Date
     let stopDate: Date
     let duration: Int

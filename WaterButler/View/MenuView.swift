@@ -46,6 +46,14 @@ struct MenuView: View {
                         })
                
                 }
+                HStack {
+                    NavigationLink(
+                        destination: HistoricalWateringsView(),
+                        label: {
+                            MenuButtonView(text: "Tidigare vattningar", imageName: "gift")
+                        })
+               
+                }
                 .padding(.top, 30)
                 Spacer()
             }.padding()
