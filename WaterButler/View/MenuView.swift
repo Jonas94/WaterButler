@@ -16,50 +16,49 @@ struct MenuView: View {
                     NavigationLink(
                         destination: PlannerView(),
                         label: {
-                            MenuButtonView(text: "Manuell vattning", imageName: "gift")
+                            MenuButtonView(text: "Manuell vattning", imageName: "play.circle")
                         })
                 }
-                .padding(.top, 200)
+                .padding(.top, 100)
                 
                 HStack {
                     NavigationLink(
                         destination: SchedulerView(),
                         label: {
-                           MenuButtonView(text: "Schemalagd vattning", imageName: "gift")
+                           MenuButtonView(text: "Schemaläggare", imageName: "calendar")
                         })
                 }
                 .padding(.top, 30)
                 
-                HStack{
-                    NavigationLink(
-                        destination: CatView(name: "cat", isPaused: false),
-                        label: {
-                            MenuButtonView(text: "Katten!", imageName: "gift")
-                        })
-                }
-                .padding(.top, 30)
+                
                 HStack {
                     NavigationLink(
                         destination: CurrentWateringView(),
                         label: {
-                            MenuButtonView(text: "Aktuell vattning", imageName: "gift")
-                        })
+                            MenuButtonView(text: "Aktuell vattning", imageName: "drop.fill")
+                        }).padding(.top, 30)
                
                 }
                 HStack {
                     NavigationLink(
                         destination: HistoricalWateringsView(),
                         label: {
-                            MenuButtonView(text: "Tidigare vattningar", imageName: "gift")
+                            MenuButtonView(text: "Tidigare vattningar", imageName: "list.bullet")
                         })
                
-                }
-                .padding(.top, 30)
+                }.padding(.top, 30)
+                HStack{
+                    NavigationLink(
+                        destination: CatView(name: "cat", isPaused: false),
+                        label: {
+                            MenuButtonView(text: "Katten!", imageName: "gift")
+                        })
+                }.padding(.top, 30)
                 Spacer()
             }.padding()
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(red: 32/255, green: 32/255, blue: 32/255))
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -69,7 +68,7 @@ struct MenuButtonView: View {
     var imageName : String
     
     var body: some View {
-            Text(text)
+           (Text(Image(systemName: imageName)) + Text(" \(text)"))
                 .font(.headline)
                 .foregroundColor(.gray)
     }
