@@ -13,6 +13,10 @@ pod 'Firebase/Analytics'
 # https://firebase.google.com/docs/ios/setup#available-pods
 #
 
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
+
 pod 'lottie-ios'
 
 end

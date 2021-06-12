@@ -10,9 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @State var showMenu = false
     @State var isActive:Bool = false
-    
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     var body: some View {
         
+        switch viewModel.state {
+        case .signedIn: HomeView()
+        case .signedOut: LoginView()
+        }
+    }
+}
+        /*
         let drag = DragGesture().onEnded{
             if $0.translation.width < -100 {
                 withAnimation{
@@ -64,7 +72,7 @@ struct ContentView: View {
             }
         }
         }
-    }
+    }*/
 
 
 
