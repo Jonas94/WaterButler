@@ -9,22 +9,21 @@ import SwiftUI
 
 struct SchedulerView: View {
     
-    @State var items = [ScheduledItem]()
-    @State var isPaused : Bool = false
-    
+    @ObservedObject private var schedulerViewModel = SchedulerViewModel(loading: true)
+
     var body: some View {
         VStack{
-            if(!isPaused){
-            CatView(name: "cat", isPaused: isPaused)
+            if(schedulerViewModel.loading){
+            CatView(name: "cat", isPaused: !schedulerViewModel.loading)
             }
             List{
-                ForEach(items){ item in
+                ForEach(schedulerViewModel.scheduledItems){ item in
                     NavigationLink(
                         destination: EditScheduledItemView(scheduledItem: ScheduledItem(id: item.id, time: item.time, duration: item.duration, days: item.days, active: item.active), editMode: true),
                         label: {
                             ScheduledItemView(scheduledItem: ScheduledItem(id: item.id, time: item.time, duration: item.duration, days: item.days, active: item.active))
                         })
-                }
+                }.onDelete(perform: schedulerViewModel.deleteItem)
                 }
                 .navigationTitle("Schemaläggare")
                 .navigationBarTitleDisplayMode(.inline)
@@ -36,48 +35,12 @@ struct SchedulerView: View {
                         }
                     )
                 }.onAppear{
-                    isPaused = false
-                    loadData()
-            }
+                    schedulerViewModel.loadScheduledItems()
+                    
+                }
                 }
     }
-    
-    
-    func loadData() {
-        isPaused = false
-        var urlString : String
-        if UserDefaults.standard.string(forKey: "piwater_url") == nil
-        {
-            urlString = "localhost:8090"
-            print("userdefaults is nil")
-            
-        }
-        else {
-            urlString = UserDefaults.standard.string(forKey: "piwater_url")!
-        }
-            guard let url = URL(string: "\(urlString)/getAllRecurringWaterings") else {
-            print("Your API end point is Invalid")
-            return
-        }
-        let request = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            if let data = data {
-                print("Fetching data...")
-                if let response = try? JSONDecoder().decode([ScheduledItem].self, from: data) {
-                    DispatchQueue.main.async {
-                        print(response)
-                        self.items = response
-                    }
-                    isPaused = true
 
-                    return
-                }
-            }
-
-        }.resume()
-    }
     
     private var formatter: DateFormatter = {
         let dateFormatterPrint = DateFormatter()
@@ -92,7 +55,7 @@ struct SchedulerView: View {
             
             let items : [ScheduledItem] = [ScheduledItem(id: UUID().uuidString, time: "22:00", duration: 3, days: ["Mån", "Tis", "Ons", "Tors", "Fre"], active: false),
                                            ScheduledItem(id: UUID().uuidString, time: "12:00", duration: 5, days: ["Lör", "Sön"], active: true)]
-            SchedulerView(items: items, isPaused:  true)
+            SchedulerView()
         }
     }
 }

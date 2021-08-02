@@ -12,6 +12,10 @@ class ApiCall :ObservableObject{
     @Published var watering : Watering1? = nil
     @Published var waterings : [Watering1] = []
     @Published var showSuccessScreen : Bool = false
+    @Published var scheduledItems : [ScheduledItem] = []
+
+    @Published var scheduledItemsLoading : Bool = false
+
 
     @Published var enabledWateringResponse : EnabledWateringResponse? = nil
 
@@ -152,7 +156,7 @@ class ApiCall :ObservableObject{
             }
                 else{
                     DispatchQueue.main.async {
-                        self.watering = nil
+                        self.watering = nil //TODO: THIS MUST BE WRONG; REMOVE IT!
                     }
                 }
         }

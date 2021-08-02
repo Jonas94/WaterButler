@@ -18,8 +18,6 @@ struct CurrentWateringView: View {
         
         
         VStack{
-            
-            
             VStack{
                 if(apiCall.watering != nil){
                     
@@ -48,7 +46,6 @@ struct CurrentWateringView: View {
                         }.padding()
                     
                     Button(action: {
-                        print("button pressed in current watering view")
                         apiCall.stopCurrentWatering()
                         apiCall.objectWillChange.send()
                     }, label: {
